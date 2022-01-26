@@ -1,0 +1,9 @@
+node_modules
+package-lock.json
+credentials.json
+
+# wordle game assets
+images
+index.html
+main*.js
+manifest.json
