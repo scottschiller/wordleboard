@@ -2,7 +2,6 @@
 ### Show your Wordle game on a Vestaboard as you play.
 --------------------------------------------------------------------------------
 Copyright (c) 2022, Scott Schiller. MIT license. Made with love and fun in mind.
-https://github.com/scottschiller/wordleboard
 
 90-second video demo:
 https://twitter.com/schill/status/1486125847173951489
