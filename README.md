@@ -7,7 +7,7 @@ https://github.com/scottschiller/wordleboard
 90-second video demo:
 https://twitter.com/schill/status/1486125847173951489
 
-**URL PARAMETERS - e.g., ?nocache=1&timetravel=1**
+**URL PARAMETERS - e.g., `?nocache=1&timetravel=1`**
 
 ```
 nocache=1      - clears localStorage (reset game state/stats, play again etc.)
@@ -43,12 +43,14 @@ https://www.powerlanguage.co.uk/wordle/main.e65ce0a5.js
 There are a few other assets, also.
 
 https://www.powerlanguage.co.uk/wordle/manifest.html
+
 https://www.powerlanguage.co.uk/wordle/images/wordle_logo_32x32.png
+
 https://www.powerlanguage.co.uk/wordle/images/wordle_logo_144x144.png
 
 **ADDING THIS SCRIPT TO WORDLE**
 
-Edit `index.html`, and load this script after the main Wordle main `<script>` module:
+Edit `index.html`, and load this script after the Wordle main `<script>` module:
 
 `<script src="wordleboard.js"></script>`
 
