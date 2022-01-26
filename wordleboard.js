@@ -58,6 +58,7 @@
 
   // When running on this host, the dev / virtual Vestaboard credentials are used,
   // unless ?force_prod=1 has been specified.
+  // One possible dev option for Python users: `python -m SimpleHTTPServer`
   const DEV_DOMAIN = 'localhost';
 
   // URL to hit with ?characters=[...] data for Vestaboard - PHP or otherwise
