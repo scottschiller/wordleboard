@@ -1,0 +1,28 @@
+{
+  "name": "wordleboard",
+  "version": "1.0.0",
+  "description": "Wordleboard: Show your Wordle game on a Vestaboard as you play.",
+  "main": "wordleboard.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/scottschiller/wordleboard.git"
+  },
+  "keywords": [
+    "wordle",
+    "vestaboard"
+  ],
+  "author": "Scott Schiller",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/scottschiller/wordleboard/issues"
+  },
+  "homepage": "https://github.com/scottschiller/wordleboard#readme",
+  "devDependencies": {
+    "eslint": "^8.7.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
