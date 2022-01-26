@@ -7,6 +7,10 @@ https://github.com/scottschiller/wordleboard
 90-second video demo:
 https://twitter.com/schill/status/1486125847173951489
 
+Image: Locally-hosted Wordle webapp including `wordleboard.js`, and PHP (or browser `fetch()`)-based calls to Vestaboard API.
+
+![wordleboard-example](https://user-images.githubusercontent.com/174437/151127652-62667f4a-bc0a-4168-b038-b91053fe9407.jpg)
+
 **URL PARAMETERS - e.g., ?nocache=1&timetravel=1**
 
 ```
