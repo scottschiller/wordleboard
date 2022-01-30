@@ -38,6 +38,7 @@
    * https://www.powerlanguage.co.uk/wordle/manifest.html
    * https://www.powerlanguage.co.uk/wordle/images/wordle_logo_32x32.png
    * https://www.powerlanguage.co.uk/wordle/images/wordle_logo_144x144.png
+   * https://www.powerlanguage.co.uk/wordle/images/wordle_logo_192x192.png
    * 
    * ADDING THIS SCRIPT TO WORDLE
    * -------------------------------------------------------------------------------
@@ -56,8 +57,8 @@
    * 
    */
 
-  // When running on this host, the dev / virtual Vestaboard credentials are used,
-  // unless ?force_prod=1 has been specified.
+  // When running on the given host, use dev / virtual Vestaboard credentials
+  // unless ?force_prod=1 has been specified. alternately, ?force_dev=1 from "prod."
   // One possible dev option for Python users: `python -m SimpleHTTPServer`
   const DEV_DOMAIN = 'localhost';
 
