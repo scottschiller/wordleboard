@@ -127,6 +127,13 @@
     } catch(err) {
       console.log('💾⛔ Warning: localStorage failed to clear. May be disabled.');
     }
+  } else {
+    try {
+      localStorage.getItem('test');
+    } catch(err) {
+      // browser is likely blocking cookies and storage access.
+      console.warn('💾⛔ Wordle requires localStorage access to work.');
+    }
   }
 
   let isDev;
