@@ -152,16 +152,17 @@
     orange: 64,
     blue: 67,
     violet: 68,
-    white: 69
+    white: 69,
+    black: 0
   };
 
   // Which color to use when a player's letter is not in the word
-  // If you find the "legend" hard to read, try specifying e.g. ?absent=blue
-  const absentColor = colors[params.absent] || 0;
+  // Customize via URL param, e.g., ?absent=blue
+  const absentColor = colors[params.absent] || colors.white;
 
   if (params.absent) {
     if (!absentColor) {
-      console.log(`🚫 Warning: "absent" color param "${params.absent}" not found. Valid options: ${Object.keys(colors).toString().replace(/,/g, ', ')}. Defaulting to blank.`);
+      console.log(`🚫 Warning: "absent" color param "${params.absent}" not found. Valid options: ${Object.keys(colors).toString().replace(/,/g, ', ')}. Defaulting to white.`);
     } else {
       console.log(`🎨 Using ${params.absent} for "absent" characters`);
     }
