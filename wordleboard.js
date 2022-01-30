@@ -199,6 +199,8 @@
 
   let app;
 
+  let rowIndex = 0;
+
   let credentials;
 
   function makeRow(offset) {
@@ -416,8 +418,6 @@
       return;
     }
 
-    showTitleScreen();
-
     app = appNodes[0];
 
     if (!app || !app.evaluateRow) {
@@ -425,12 +425,24 @@
       return;
     }
 
+    // user may be resuming a partially-complete game from localStorage
+    rowIndex = app.rowIndex;
+
+    showTitleScreen();
+
     // update the Vestaboard each time the user completes a row.
     const originalEvaluateRow = app.evaluateRow.bind(app);
 
     app.evaluateRow = () => {
+
       originalEvaluateRow();
+
+      // only update if user has completed a row, i.e., app.rowIndex has changed
+      if (app.rowIndex === rowIndex) return;
+
+      rowIndex = app.rowIndex;
       updateVestaboard();
+
     }
 
   });
