@@ -289,7 +289,7 @@
       [0,65,65,65,65,65,0,0,0,0,66,66,66,66,66,0,0,0,0,66,66,66]
     ];
 
-    console.log('Wordleboard: Displaying “Title screen”');
+    console.log('📟 Wordleboard: Displaying “Title screen”');
 
     // string
     sendToVestaboard(JSON.stringify(characters));
@@ -310,9 +310,6 @@
      * ----------------------
      * (where #xxx is `dayOffset`)
      */
-
-    // where the data lives
-    app = document.getElementsByTagName('game-app')[0];
 
     const data = [];
 
@@ -422,6 +419,11 @@
     showTitleScreen();
 
     app = appNodes[0];
+
+    if (!app || !app.evaluateRow) {
+      console.warn('💣 Wordleboard: Wordle appears to have failed.');
+      return;
+    }
 
     // update the Vestaboard each time the user completes a row.
     const originalEvaluateRow = app.evaluateRow.bind(app);
