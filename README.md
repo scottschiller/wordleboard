@@ -51,6 +51,8 @@ https://www.powerlanguage.co.uk/wordle/images/wordle_logo_32x32.png
 
 https://www.powerlanguage.co.uk/wordle/images/wordle_logo_144x144.png
 
+https://www.powerlanguage.co.uk/wordle/images/wordle_logo_192x192.png
+
 **ADDING THIS SCRIPT TO WORDLE**
 
 Edit `index.html`, and load this script after the Wordle main `<script>` module:
