@@ -197,13 +197,23 @@
 
   let credentials;
 
+  function addSpacing(array, count = 5) {
+
+    if (!array) return;
+
+    for (let i = 0; i < count; i++) {
+      array.push(keyMap.space);
+    }
+    
+  }
+
   function makeRow(offset) {
 
     let row = [];
     let i;
 
     // Left spacing
-    row = row.concat(Array(5).fill(keyMap.space));
+    addSpacing(row);
 
     // 5-letter word, or empty string (depending on game progress)
     const word = app.boardState[offset].toUpperCase();
@@ -218,12 +228,12 @@
     } else {
 
       // empty row / word
-      row = row.concat(Array(5).fill(keyMap.space));
+      addSpacing(row);
 
     }
 
     // Middle spacing
-    row = row.concat(Array(2).fill(keyMap.space));
+    addSpacing(row, 2);
 
     // Array of strings indicating character matches: absent|present|correct
     const evalData = app.evaluations[offset];
@@ -231,7 +241,7 @@
     if (!evalData) {
 
       // Row empty, not played yet; fill in with blanks.
-      row = row.concat(Array(5).fill(keyMap.space));
+      addSpacing(row);
 
     } else {
 
@@ -253,7 +263,7 @@
       day = day.toString();
 
       // Insert enough space to right-align the day string, #xxx
-      row = row.concat(Array(5 - (day.length + 1)).fill(keyMap.space));
+      addSpacing(row, 5 - (day.length + 1));
       
       row.push(keyMap.poundSign);
 
@@ -265,7 +275,7 @@
     } else {
 
       // Fill in rest of row
-      row = row.concat(Array(5).fill(keyMap.space));
+      addSpacing(row);
 
     }
 
