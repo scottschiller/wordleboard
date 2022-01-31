@@ -85,7 +85,7 @@
 
   if (params.timetravel && !isNaN(params.timetravel)) {
 
-    // By default, subtract `n` days and go into the past.
+    // e.g., ?timetravel=1. By default, subtract `n` days and go into the past.
     // Specify a -ve number if you want to go to the future - at your own risk. ;)
     let timeTravelDays = parseInt(params.timetravel, 10);
 
