@@ -97,15 +97,9 @@
     // Here be dragons. 🐉
     window.Date = function(ts) {
 
-      let time;
+      const time = (ts ? new _Date(ts) : new _Date()).getTime();
 
-      if (ts) {
-        time = new _Date(ts).getTime();
-      } else {
-        time = new _Date().getTime();
-      }
-
-      // Now, roll back one day.
+      // ±, msec per day.
       return new _Date(time - (timeTravelDays * 86400000));
 
     }
