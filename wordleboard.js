@@ -23,27 +23,70 @@
    * A local copy of the "Wordle" web game, and some form of web server is required
    * for the game - and optionally, a local PHP endpoint for Vestaboard API calls.
    * 
-   * Original Wordle game:
-   * https://www.powerlanguage.co.uk/wordle/
+   * As of 02/2022, acquired by and living at the New York Times:
+   * https://www.nytimes.com/games/wordle/index.html
+   *
+   * Original Wordle game, last known capture on 2022/02/04 before NYT redirect:
+   * (This version may be easier, as it doesn't have embedded Google Analytics etc.)
+   * https://web.archive.org/web/20220204025316/https://www.powerlanguage.co.uk/wordle/
    * 
    * REQUIRED ASSETS
    * -------------------------------------------------------------------------------
    * You will need local copies of these files, at minimum:
-   * https://www.powerlanguage.co.uk/wordle/index.html
+   * https://www.nytimes.com/games/wordle/index.html
    * 
    * And the latest version of the script it uses, main.*.js - at present...
-   * https://www.powerlanguage.co.uk/wordle/main.e65ce0a5.js
+   * https://www.nytimes.com/games/wordle/main.bd4cb59c.js
    * 
-   * There are a few other assets, also.
-   * https://www.powerlanguage.co.uk/wordle/manifest.html
-   * https://www.powerlanguage.co.uk/wordle/images/wordle_logo_32x32.png
-   * https://www.powerlanguage.co.uk/wordle/images/wordle_logo_144x144.png
-   * https://www.powerlanguage.co.uk/wordle/images/wordle_logo_192x192.png
+   * There are a few other assets, also. Look for 404s in the network tab, and grab
+   * the .woff2 webfonts and .svg icons if you want.
+   *
+   * The manifest.json file has a number of icon images, which may apply if you're
+   * bookmarking or adding the app to your home screen.
+   *
+   * https://www.nytimes.com/games/wordle/manifest.json
    * 
-   * ADDING THIS SCRIPT TO WORDLE
+   * OPTIONAL: Edit manifest.json
+   * -------------------------------------------------------------------------------
+   * 
+   * There is a `start_url` value within `manifest.json` that points to the NYT,
+   * https://www.nytimes.com/games/wordle
+   * 
+   * If you add this to your home screen (or similar) and find your version bouncing
+   * to the NYT version, try "start_url": "/",
+   *
+   * ADDING THE "WORDLEBOARD" SCRIPT
    * -------------------------------------------------------------------------------
    * Edit `index.html`, and load this script after the main Wordle main module:
    * <script src="wordleboard.js"></script>
+   * 
+   * OPTIONAL: REMOVING NYT GDPR / COOKIE SCRIPT
+   * -------------------------------------------------------------------------------
+   * You'll want to find and drop this one, unless you like GDPR banners.
+   * <script 
+   *  defer
+   *  type="text/javascript"
+   *  src="https://www.nytimes.com/games-assets/gdpr/cookie-notice-v2.1.2.min.js">
+   * </script>
+   *
+   * OPTIONAL: REMOVING NYT "data-layer" BEACON, GOOGLE ANALYTICS
+   * -------------------------------------------------------------------------------
+   * NOTE: You can avoid this by using the pre-acquisition codebase at archive.org.
+   * 
+   * Post-NYT acquisition, things have understandably changed regarding data / stats
+   * collection. Wordle will try to hit some NYT endpoint on load, and Google
+   * Analytics via the app script. You can find and drop this, to be nice and not
+   * pollute their stats etc.
+   * 
+   * Find and comment out lines that look like this in the main.*.js file:
+   * /svc/nyt/data-layer
+   * (XHR GET request URL)
+   * Comment out the lines with open() and send() calls, dropping commas as needed
+   * to fix syntax errors.
+   * 
+   * Also, comment out lines with this:
+   * https://www.googletagmanager.com/gtm.js?id=
+   * (dynamic `<script>` node injection)
    * 
    * VESTABOARD API REQUIREMENTS
    * -------------------------------------------------------------------------------
